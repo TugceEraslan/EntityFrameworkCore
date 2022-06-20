@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "List";
+}
+
+<h2>List</h2>
+<br />
+
+@foreach (var product in Model)
+{
+    <h2>@Html.Raw(product.Name)</h2>
+    <h4>@Html.Raw(product.Category)</h4>
+    <h5>@product.Price</h5>
+}
+
