@@ -28,7 +28,7 @@ namespace EntityFrameworkCore
             services.AddDbContext<ApplicationDbContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("MyConnection"));  // UseSqlServer ý kullanabilmem için nuget ten  Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 3.1.3 i indirdim.
             });
-            services.AddTransient<IProductRepository, FakeProductRepository>(); // Uygulama içerisinde IProductRepository çaðýrdýðým zaman FakeProductRepository den de bir örnek gönder. 
+            services.AddTransient<IProductRepository, EfProductRepository>(); // Uygulama içerisinde IProductRepository çaðýrdýðým zaman EfProductRepository den de bir örnek gönder. 
             // AddTransient: Her servis isteðinde yeni bir instance oluþturulur.Transient servisinden üretilir.
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddMvc();
